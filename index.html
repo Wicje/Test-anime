@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anime Tourism - Career Opportunities</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* CSS variables updated for English clarity */
+        :root {
+            --color-primary: #1a73e8; /* Professional blue for key elements */
+            --color-text-dark: #333333;
+            --color-text-light: #666666;
+            --color-bg-white: #ffffff;
+            --color-bg-light-grey: #f5f5f5;
+            --max-content-width: 1120px;
+            --header-height: 80px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            color: var(--color-text-dark);
+            line-height: 1.8;
+            background-color: var(--color-bg-white);
+            -webkit-font-smoothing: antialiased;
+            min-height: 200vh; 
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: opacity 0.3s;
+        }
+        a:hover { opacity: 0.7; }
+
+        /* --- 1. Fixed Header --- */
+        #site-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: var(--header-height);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 40px;
+            z-index: 1000;
+            background-color: var(--color-bg-white);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05); 
+        }
+
+        .logo a {
+            font-size: 1.6em;
+            font-weight: 700;
+        }
+
+        .main-nav {
+            display: flex;
+            align-items: center;
+        }
+
+        .main-nav a {
+            font-size: 0.9em;
+            font-weight: 500;
+            margin-left: 35px;
+            color: var(--color-text-dark);
+        }
+
+        /* Call-to-action button style */
+        .apply-button {
+            background-color: var(--color-primary);
+            color: var(--color-bg-white) !important;
+            padding: 8px 20px;
+            border-radius: 4px;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            margin-left: 50px;
+        }
+        .apply-button:hover { background-color: #1565c0; opacity: 1; }
+
+        /* --- 2. Hero Section --- */
+        #hero {
+            padding-top: var(--header-height); 
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), url('') center/cover;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding-bottom: 80px;
+        }
+
+        #hero h1 {
+            font-size: 3.8em;
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.3;
+        }
+
+        #hero p {
+            font-size: 1.4em;
+            font-weight: 300;
+            color: var(--color-text-light);
+        }
+        
+        .scroll-down {
+            position: absolute;
+            bottom: 40px;
+            font-size: 0.8em;
+            letter-spacing: 2px;
+            color: var(--color-text-light);
+        }
+
+
+        /* --- 3. Content Sections --- */
+        .content-section {
+            padding: 120px 40px; 
+            max-width: var(--max-content-width);
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .section-header h2 {
+            font-size: 3em;
+            font-weight: 700;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+
+        .section-header p {
+            font-size: 1.2em;
+            color: var(--color-text-light);
+        }
+
+        /* Two-column text block layout */
+        .text-columns {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            font-size: 1.05em;
+        }
+
+        .text-columns p {
+            margin-bottom: 1em;
+        }
+        
+        #culture {
+            background-color: var(--color-bg-light-grey);
+        }
+
+        /* --- 4. Job Card Replication --- */
+        .job-card-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .job-card {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 25px 40px;
+            border: 1px solid #e0e0e0;
+            transition: border-color 0.3s, background-color 0.3s;
+            font-size: 1.1em;
+            font-weight: 500;
+        }
+
+        .job-card:hover {
+            border-color: var(--color-primary);
+            background-color: var(--color-bg-white);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); 
+        }
+        
+        /* Arrow icon for the job card link */
+        .job-card::after {
+            content: '→';
+            font-size: 1.5em;
+            font-weight: 300;
+            color: var(--color-text-light);
+        }
+
+        /* --- 5. Footer Replication --- */
+        #site-footer {
+            padding: 60px 40px;
+            border-top: 1px solid #eeeeee;
+            text-align: center;
+        }
+
+        .footer-links {
+            margin-bottom: 20px;
+        }
+
+        .footer-links a {
+            margin: 0 15px;
+            font-size: 0.9em;
+            color: var(--color-text-light);
+        }
+
+        .copyright {
+            font-size: 0.8em;
+            color: var(--color-text-light);
+            font-weight: 300;
+        }
+
+        /* Add Media Queries for responsiveness here */
+    </style>
+</head>
+<body>
+    
+    <header id="site-header">
+        <div class="logo">
+            <a href="#">Anime Tourism</a> 
+        </div>
+        <nav class="main-nav">
+            <a href="#message">Message</a> 
+            <a href="#culture">Culture</a> 
+            <a href="#positions">Job Positions</a> 
+            <a href="#interview">Interviews</a> 
+            <a href="#faq">FAQ</a>
+            <a href="#" class="apply-button">Apply Now</a> 
+        </nav>
+        </header>
+
+    <section id="hero">
+        <div class="hero-content">
+            <h1>Creating New Journeys with Passion and Creativity.</h1>
+            <p>We create unforgettable experiences at the intersection of Anime and Tourism.</p>
+        </div>
+        <div class="scroll-down">SCROLL</div>
+    </section>
+
+    <main>
+        <section id="message" class="content-section">
+            <div class="section-header">
+                <h2>Message from the CEO</h2>
+                <p>The future of Cool Japan starts with you.</p>
+            </div>
+            <div class="text-columns">
+                <div>
+                    <p>We are a team dedicated to connecting fans worldwide with the places that inspired their favorite anime. Our mission is to make the "pilgrimage" a smooth, enriching, and joyful experience.</p>
+                    <p>We are currently looking for colleagues to move to the next stage with us. Use your experience to become a bridge between the two wonderful worlds of Anime and Tourism.</p>
+                </div>
+                <div>
+                    <p>Our career recruitment is a place where your passion and skills can be directly utilized. We welcome those who are not afraid of change and dare to challenge new value creation.</p>
+                    <p>If you are interested, please contact us. Let's create the future together.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="culture" class="content-section">
+             <div class="section-header">
+                <h2>Our Culture</h2>
+                <p>Free thinking and professionalism.</p>
+            </div>
+            <div class="job-card-list">
+                <div class="job-card">Respect for Fan Culture</div>
+                <div class="job-card">Global Collaboration</div>
+                <div class="job-card">Always Seeking Innovation</div>
+            </div>
+        </section>
+
+        <section id="positions" class="content-section">
+            <div class="section-header">
+                <h2>Job Positions</h2>
+                <p>Current open positions are listed here.</p>
+            </div>
+            <div class="job-card-list">
+                <a href="#" class="job-card">
+                    Marketing Specialist (Global)
+                </a>
+                <a href="#" class="job-card">
+                    Frontend Web Developer
+                </a>
+                <a href="#" class="job-card">
+                    Content Planner (Anime Focus)
+                </a>
+            </div>
+        </section>
+
+        </main>
+
+    <footer id="site-footer">
+        <div class="footer-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Company Profile</a>
+        </div>
+        <p class="copyright">&copy; 2025 Anime Tourism Company</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const header = document.getElementById('site-header');
+            
+            // Fixed Header Style Change on Scroll 
+            const handleScroll = () => {
+                // If scrolled past 100px, apply a subtle shadow/border change
+                if (window.scrollY > 100) {
+                    header.style.boxShadow = '0 2px 4px rgba(0, 0, 0, 0.05)';
+                    header.style.borderBottom = 'none'; 
+                } else {
+                    header.style.boxShadow = 'none';
+                    header.style.borderBottom = '1px solid rgba(0, 0, 0, 0.05)'; 
+                }
+            };
+
+            window.addEventListener('scroll', handleScroll);
+            handleScroll(); 
+
+            // Smooth Scrolling 
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    if (!this.classList.contains('apply-button')) {
+                        e.preventDefault();
+                        const targetId = this.getAttribute('href');
+                        const targetElement = document.querySelector(targetId);
+                        
+                        // Calculate offset to account for fixed header height
+                        const headerHeight = document.getElementById('site-header').offsetHeight;
+                        const targetPosition = targetElement.offsetTop - headerHeight;
+
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
